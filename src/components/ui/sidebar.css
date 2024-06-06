@@ -1,0 +1,10 @@
+.sidebar {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	display: flex;
+	border: 2px;
+	border-color: black;
+	height: 100vh;
+}

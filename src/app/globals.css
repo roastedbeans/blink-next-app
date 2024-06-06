@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@layer base {
+	:root {
+		--background: #f6f6f6; /* Light gray */
+		--foreground: #121212; /* Dark gray */
+
+		--card: #ffffff; /* White */
+		--card-foreground: #121212; /* Dark gray */
+
+		--popover: #ffffff; /* White */
+		--popover-foreground: #121212; /* Dark gray */
+
+		--primary: #d3ab2d; /* Confetti 500 */
+		--primary-foreground: #ffffff; /* White */
+
+		--secondary: #121212; /* Confetti 600 */
+		--secondary-foreground: #ffffff; /* White */
+
+		--muted: #f6f6f6; /* Light gray */
+		--muted-foreground: #3d3d3d; /* Dark gray */
+
+		--accent: #f6f6f6; /* Light gray */
+		--accent-foreground: #121212; /* Dark gray */
+
+		--destructive: #d9534f; /* Slightly darker red */
+		--destructive-foreground: #f3f8fa; /* Light blue-gray */
+
+		--border-disabled: #d1d1d1; /* Light gray */
+		--border: #121212; /* Dark gray */
+		--input: #d1d1d1; /* Light gray */
+		--ring: #121212; /* Dark gray */
+
+		--radius: 0.5rem;
+
+		--font-inter: 'inter', sans-serif;
+	}
+
+	.dark {
+		--background: #121212; /* Darkest gray */
+		--foreground: #f6f6f6; /* Light gray */
+
+		--card: #1d1d1d; /* Very dark gray */
+		--card-foreground: #f6f6f6; /* Light gray */
+
+		--popover: #1d1d1d; /* Very dark gray */
+		--popover-foreground: #f6f6f6; /* Light gray */
+
+		--primary: #dcc643; /* Confetti 400 */
+		--primary-foreground: #121212; /* Dark gray */
+
+		--secondary: #121212; /* Confetti 500 */
+		--secondary-foreground: #121212; /* Dark gray */
+
+		--muted: #3d3d3d; /* Dark gray */
+		--muted-foreground: #b0b0b0; /* Light gray */
+
+		--accent: #3d3d3d; /* Dark gray */
+		--accent-foreground: #f6f6f6; /* Light gray */
+
+		--destructive: #c33b38; /* Slightly darker red */
+		--destructive-foreground: #f6f6f6; /* Light gray */
+
+		--border-disabled: #3d3d3d; /* Dark gray */
+		--border: #f6f6f6; /* Light gray */
+		--input: #3d3d3d; /* Dark gray */
+		--ring: #f6f6f6; /* Light gray */
+
+		--radius: 0.5rem;
+
+		--font-inter: 'inter', sans-serif;
+	}
+}
+
+div {
+	scroll-behavior: smooth;
+}
+
+/* Scroll bar stylings */
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f6f6f6; /* Light gray from cod-gray palette */
+	border-radius: 999px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(#f6f6f6, #6d6d6d); /* Gradient from light gray to mid gray (cod-gray 500) */
+	border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #6d6d6d; /* Mid gray for better visibility on hover (cod-gray 500) */
+}
