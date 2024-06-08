@@ -3,6 +3,7 @@ import { satoshi } from '@/../public/fonts/fonts';
 import './../../globals.css';
 import Sidebar from '@/components/ui/Sidebar';
 import Header from '@/components/ui/header';
+import { LoadingProvider } from '@/context/LoadingContext';
 
 export const metadata: Metadata = {
 	title: 'BLINK | Login',
@@ -21,8 +22,10 @@ export default function RootLayout({
 			<body
 				suppressHydrationWarning={true}
 				className='flex w-full min-h-screen h-fit items-center justify-center mx-auto bg-white dark:bg-black dark:bg-dot-white/[0.2] bg-dot-secondary/[0.2] relative'>
-				<div className='absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div>
-				{children}
+				<LoadingProvider>
+					<div className='absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]'></div>
+					{children}
+				</LoadingProvider>
 			</body>
 		</html>
 	);

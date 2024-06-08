@@ -24,10 +24,12 @@ export default function RootLayout({
 				<nav className='h-fit max-h-screen relative'>
 					<Sidebar />
 				</nav>
-				<main className='w-full h-fit min-h-screen'>
-					<Header />
-					{children}
-				</main>
+				<LoadingProvider>
+					<main className='w-full h-fit min-h-screen'>
+						<Header />
+						{children}
+					</main>
+				</LoadingProvider>
 			</body>
 		</html>
 	);

@@ -3,6 +3,7 @@ import { satoshi } from '@/../public/fonts/fonts';
 import './../../globals.css';
 import Sidebar from '@/components/ui/Sidebar';
 import Header from '@/components/ui/header';
+import { LoadingProvider } from '@/context/LoadingContext';
 
 export const metadata: Metadata = {
 	title: 'BLINK',
@@ -24,10 +25,12 @@ export default function RootLayout({
 				<nav className='h-fit min-h-screen md:max-w-64 max-w-16 w-full relative overflow-hidden'>
 					<Sidebar />
 				</nav>
-				<main className='w-full h-fit min-h-screen relative'>
-					<Header />
-					{children}
-				</main>
+				<LoadingProvider>
+					<main className='w-full h-fit min-h-screen relative'>
+						<Header />
+						{children}
+					</main>
+				</LoadingProvider>
 			</body>
 		</html>
 	);
