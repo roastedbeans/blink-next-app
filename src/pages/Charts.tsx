@@ -28,7 +28,7 @@ const Charts = () => {
 };
 
 const LineChart = () => (
-	<div className='p-2 items-center justify-center flex flex-col flex-1 w-full h-full min-h-[7rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] border-2 border-border dark:border-white/[0.2] bg-white dark:bg-black'>
+	<div className='p-2 items-center justify-center flex flex-col flex-1 w-full h-full min-h-[7rem] rounded-xl border-2 border-border bg-white dark:bg-black'>
 		<LineChartTemplate />
 	</div>
 );

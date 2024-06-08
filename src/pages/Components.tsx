@@ -24,7 +24,7 @@ const Components = () => {
 	);
 };
 const ButtonDisplay = () => (
-	<div className='p-2 flex flex-col flex-1 w-full items-center justify-start mx-auto h-hit min-h-[6rem] gap-4 rounded-lg dark:bg-dot-white/[0.2] bg-dot-black/[0.2] border-2 border-border overflow-clip dark:border-white/[0.2] bg-white dark:bg-black overflow-y-auto'>
+	<div className='p-2 flex flex-col flex-1 w-full items-center justify-start mx-auto h-hit min-h-[6rem] gap-4 rounded-lg border-2 border-border overflow-clip dark:border-white/[0.2] bg-white dark:bg-black overflow-y-auto'>
 		<div className='flex-wrap flex gap-2 items-center justify-center h-auto mx-auto'>
 			<ButtonGroup />
 		</div>

@@ -3,15 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { useLoading } from '@/context/LoadingContext';
 
 const Dashboard = () => {
+	const [hasLoaded, setHasLoaded] = useState<boolean>(false);
 	const { loading, setLoading } = useLoading();
 
 	useEffect(() => {
-		if (loading) {
+		if (!loading && !hasLoaded) {
 			const startLoading = async () => {
 				setLoading(true);
 				// Simulate an async operation
 				setTimeout(() => {
 					setLoading(false);
+					setHasLoaded(true);
 				}, 2000);
 			};
 

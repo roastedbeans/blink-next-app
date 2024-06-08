@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect } from 'react';
 import { useLoading } from '@/context/LoadingContext';
 
@@ -7,7 +8,6 @@ const Branches = () => {
 	useEffect(() => {
 		if (loading) {
 			const startLoading = async () => {
-				setLoading(true);
 				// Simulate an async operation
 				setTimeout(() => {
 					setLoading(false);
@@ -17,6 +17,7 @@ const Branches = () => {
 			startLoading();
 		}
 	}, [loading]);
+
 	return (
 		<div className='flex w-full min-h-screen h-full items-center justify-center text-center bg-gradient-to-tr from-background-secondary to-background dark:from-dark-background-secondary dark:to-dark-background relative md:p-8 p-4'>
 			test

@@ -1,26 +1,42 @@
-'use client';
-
-import blinking from '@/../public/lottieFiles/blinking.json';
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import React, { useState, useEffect } from 'react';
+import { RiEye2Line, RiEyeCloseLine } from '@remixicon/react';
+import { AnimatePresence, motion, MotionConfig } from 'framer-motion';
 import { TypewriterEffect } from './typewriter-effect';
-import { AnimatePresence, motion } from 'framer-motion';
 
 const Loading = () => {
+	const [isBlinking, setIsBlinking] = useState(true);
+
+	useEffect(() => {
+		const blinkInterval = setTimeout(() => {
+			setIsBlinking((prevState) => !prevState);
+		}, 500); // Adjust blinking speed here
+
+		return () => clearTimeout(blinkInterval);
+	}, [isBlinking]);
+
 	return (
 		<AnimatePresence>
 			<div className='fixed w-full h-screen overflow-clip flex flex-col items-center justify-center bg-white/5 backdrop-blur-sm z-[999]'>
-				<motion.div
-					initial={{ rotate: 360, scale: 0 }}
-					animate={{ rotate: 0, scale: 1 }}
-					exit={{ rotate: -360, scale: 1 }}>
-					<Player
-						autoplay
-						loop
-						src={blinking}
-						style={{ height: '80px', width: '80px' }}>
-						<Controls visible={false} />
-					</Player>
-				</motion.div>
+				<MotionConfig transition={{ duration: 0.1 }}>
+					{isBlinking ? (
+						<motion.div
+							initial={{ scaleY: 0 }}
+							animate={{ scaleY: 1 }}
+							exit={{ scaleY: 0 }}
+							transition={{ duration: 0.3 }}>
+							<RiEye2Line />
+						</motion.div>
+					) : (
+						<motion.div
+							initial={{ scaleY: 0 }}
+							animate={{ scaleY: 1 }}
+							exit={{ scaleY: 0 }}
+							transition={{ duration: 0.3 }}>
+							<RiEyeCloseLine />
+						</motion.div>
+					)}
+				</MotionConfig>
+
 				<TypewriterEffect
 					words={[{ text: 'blinking...' }]}
 					className='lg:text-lg md:text-md sm:text-sm justify-center text-secondary dark:text-dark-secondary'
