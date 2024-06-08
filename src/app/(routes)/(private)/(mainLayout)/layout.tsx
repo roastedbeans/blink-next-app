@@ -3,6 +3,7 @@ import Sidebar from '@/components/ui/Sidebar';
 import Header from '@/components/ui/header';
 import type { Metadata } from 'next';
 import '../../../globals.css';
+import { LoadingProvider } from '@/context/LoadingContext';
 
 export const metadata: Metadata = {
 	title: 'Components Template',
