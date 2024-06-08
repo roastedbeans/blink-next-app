@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
 import { satoshi } from '@/../public/fonts/fonts';
-import './../../globals.css';
 import Sidebar from '@/components/ui/Sidebar';
 import Header from '@/components/ui/header';
+import type { Metadata } from 'next';
+import '../../../globals.css';
 
 export const metadata: Metadata = {
 	title: 'Components Template',
