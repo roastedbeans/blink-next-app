@@ -9,7 +9,7 @@ const Loading = () => {
 	useEffect(() => {
 		const blinkInterval = setTimeout(() => {
 			setIsBlinking((prevState) => !prevState);
-		}, 500); // Adjust blinking speed here
+		}, 400); // Adjust blinking speed here
 
 		return () => clearTimeout(blinkInterval);
 	}, [isBlinking]);
@@ -17,21 +17,19 @@ const Loading = () => {
 	return (
 		<AnimatePresence>
 			<div className='fixed w-full h-screen overflow-clip flex flex-col items-center justify-center bg-white/5 backdrop-blur-sm z-[999]'>
-				<MotionConfig transition={{ duration: 0.1 }}>
+				<MotionConfig transition={{ duration: 0.4, ease: 'easeInOut' }}>
 					{isBlinking ? (
 						<motion.div
-							initial={{ scaleY: 0 }}
-							animate={{ scaleY: 1 }}
-							exit={{ scaleY: 0 }}
-							transition={{ duration: 0.3 }}>
+							initial={{ scale: 0, opacity: 0.4 }}
+							animate={{ scale: 1, opacity: 1 }}
+							exit={{ scale: 0, opacity: 0 }}>
 							<RiEye2Line />
 						</motion.div>
 					) : (
 						<motion.div
-							initial={{ scaleY: 0 }}
-							animate={{ scaleY: 1 }}
-							exit={{ scaleY: 0 }}
-							transition={{ duration: 0.3 }}>
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}>
 							<RiEyeCloseLine />
 						</motion.div>
 					)}
