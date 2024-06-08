@@ -3,6 +3,7 @@ import { satoshi } from '@/../public/fonts/fonts';
 import './../../globals.css';
 import Sidebar from '@/components/ui/Sidebar';
 import Header from '@/components/ui/header';
+import { LoadingProvider } from '@/context/LoadingContext';
 
 export const metadata: Metadata = {
 	title: 'Components Template',
@@ -24,10 +25,12 @@ export default function RootLayout({
 				<nav className='h-fit max-h-screen relative'>
 					<Sidebar />
 				</nav>
-				<main className='w-full h-fit min-h-screen'>
-					<Header />
-					{children}
-				</main>
+				<LoadingProvider>
+					<main className='w-full h-fit min-h-screen'>
+						<Header />
+						{children}
+					</main>
+				</LoadingProvider>
 			</body>
 		</html>
 	);
